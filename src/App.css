@@ -30,6 +30,17 @@ input{
   color: #F0EBD8;
 }
 
+output{
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 131px;
+  text-align: center;
+
+  color: #F0EBD8;
+}
+
 ::placeholder {
   font-family: 'Sen';
   font-style: normal;
