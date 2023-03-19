@@ -1,14 +1,16 @@
 .App {
-  text-align: center;
+  text-align: center; 
 }
 
 .App-title {
  
+  margin: auto;
   position: absolute;
-  width: 759px;
-  height: 271px;
-  left: 63px;
-  top: 30px;
+  padding: 10px;
+  width: 60%;
+  height: 20%;
+  left:auto;
+  top: 5%;
 
   font-family: 'Sen';
   font-style: normal;
@@ -37,6 +39,7 @@ output{
   font-size: 80px;
   line-height: 131px;
   text-align: center;
+  padding: 10px;
 
   color: #F0EBD8;
 }
@@ -54,9 +57,8 @@ output{
 
 .App-rect {
   box-sizing: border-box;
-
-  position: absolute;
   width: 275px;
+  position: absolute;
   height: 162px;
   top: 200px;
   border-style: solid;
@@ -69,24 +71,31 @@ output{
 
 .App-rect1{
   left: 40px;
+  width: 275px;
+
 
 }
 
 .App-rect2{
-  left: 550px;
+  left: 465px;
+  width: 275px;
+
+
 }
 
 .App-rect3 {
-  left: 960px;
+  left: 850px;
+  width: 390px;
+
 }
 
 .App-output{
   box-sizing: border-box;
 
   position: absolute;
-  width: 275px;
+  width: 390px;
   height: 162px;
-  left: 960px;
+  left: 850px;
   top: 200px;
 
   border-style: solid;
@@ -103,7 +112,7 @@ output{
 box-sizing: border-box;
 
 position: absolute;
-width: 162px;
+width: 80px;
 height: 162px;
 left: 350px;
 top: 200px;
@@ -129,7 +138,7 @@ color: #F0EBD8;
 position: absolute;
 width: 156px;
 height: 182px;
-left: 820px;
+left: 720px;
 top: 200px;
 
 font-family: 'Sen';
@@ -145,7 +154,6 @@ color: #F0EBD8;
 
 .App-rect-line {
 position: absolute;
-width: 275px;
 height: 0px;
 top: 380px;
 
@@ -155,7 +163,7 @@ border: 5px solid #F0EBD8;
 
 .App-square-line {
 position: absolute;
-width: 162px;
+width: 80px;
 height: 0px;
 left: 350px;
 top: 380px;

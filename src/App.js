@@ -12,6 +12,7 @@ function App() {
     {label: '-', value: '-'},
     {label: '*', value: '*'},
     {label: '/', value: '/'},
+    {label: '^', value: '^'}
   ];
   
   const handleX1Change = (event) => {
@@ -31,22 +32,44 @@ function App() {
     let num2 = parseFloat(x2Value);
 
     if (isNaN(num1) || isNaN(num2)) {
-      setResult("Invalid input");
+      setResult("Ans");
       return;
     }
 
     switch (xOpValue) {
       case "+":
-        setResult(num1 + num2);
+        var add = num1 + num2;
+        if(add.toString().length > 8){
+          setResult("LimitHit");
+         }else{
+          setResult(num1 + num2);
+         }
         break;
       case "-":
         setResult(num1 - num2);
         break;
       case "*":
+        var multi = num1 * num2;
+       if(multi.toString().length > 8){
+        setResult("LimitHit");
+       }else{
         setResult(num1 * num2);
+       }
         break;
       case "/":
-        setResult(num1 / num2);
+        if(num2 === 0){
+          setResult("Inf");
+        }else{
+          setResult(num1 / num2);
+        }
+        break;
+      case "^":
+        var power = num1 ** num2;
+        if(power.toString().length > 8){
+          setResult("LimitHit");
+        }else{
+          setResult(num1 ** num2);
+        }
         break;
       default:
         setResult("Invalid operator");
@@ -61,26 +84,28 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <a className='App-title'>
-          Calculadora Cleber
-        </a>
+          <a className='App-title'>
+            Calculadora Cleber
+          </a>
       </header>
-      <input onChange={handleX1Change} type='text' className='App-rect App-rect1' placeholder='Num 1'></input>
+      <div>
+        <input onChange={handleX1Change} type='text' className='App-rect App-rect1' placeholder='Num 1' maxLength="6"></input>
 
-      <select value={xOpValue} onChange={handleXOpChange} className='App-square' size='1'>
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>{option.label}</option>
-        ))}
-      </select>
+        <select value={xOpValue} onChange={handleXOpChange} className='App-square' size='1'>
+          {options.map((option, index) => (
+            <option key={index} value={option.value}>{option.label}</option>
+          ))}
+        </select>
 
-      <input onChange={handleX2Change} type='text' className='App-rect App-rect2' placeholder='Num 2'></input>
-      <a className='App-equal'>=</a>
-      <output className='App-output' >{result}</output>
+        <input onChange={handleX2Change} type='text' className='App-rect App-rect2' placeholder='Num 2' maxLength="6"></input>
+        <a className='App-equal'>=</a>
+        <output className='App-output'>{result.toString().slice(0,8)}</output>
 
-      <div className='App-rect-line App-rect1'></div>
-      <div className='App-square-line'></div>
-      <div className='App-rect-line App-rect2'></div>
-      <div className='App-rect-line App-rect3'></div>
+        <div className='App-rect-line App-rect1'></div>
+        <div className='App-square-line'></div>
+        <div className='App-rect-line App-rect2'></div>
+        <div className='App-rect-line App-rect3'></div>
+      </div>
     </div>
   );
 }
