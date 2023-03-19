@@ -88,7 +88,7 @@ function App() {
             Calculadora Cleber
           </a>
       </header>
-      <div>
+      <div className='App-container'>
         <input onChange={handleX1Change} type='text' className='App-rect App-rect1' placeholder='Num 1' maxLength="6"></input>
 
         <select value={xOpValue} onChange={handleXOpChange} className='App-square' size='1'>
